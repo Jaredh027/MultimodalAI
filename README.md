@@ -8,6 +8,7 @@ Adapted example built on top of and using NVIDIA AI Foundation Models.
 - Multimodal parsing of documents - images, text through multimodal LLM APIs
 - Uses fuyu_8b to get image description
 - Uses llama2_code_34b to develope code based off image description
+- External document containing sample company product information in output.txt file
 
 ## Setup Steps
 
@@ -58,12 +59,15 @@ Here is how the system is designed:
 ```mermaid
 graph LR
 E(User Query) --> A(FRONTEND<br/>Chat UI<br/>Streamlit)
-F(PDF, PowerPoints,<br/>DOC/HTML) --> G(Image/Table<br>Extraction)
-G --> H(Multimodal<br>Embeddings)
-B --> D(Streaming<br/>Chat Output)
-C(Vector DB) -- Augmented<br/> Prompt--> B((BACKEND<br/>NVIDIA AI Playground<br/>Mixtral 8x7B))
-A --Retrieval--> C
-H --> C
+J(Prompt: Describe HTML page) --> G((Fuyu LLM))
+F(Image File of <br/>Sample Product Webpage) --> G
+G -- Descritpion of Webpage<br/>with Products --> K(Augmented Prompt)
+H(Company Product<br/>Descriptions in output.txt) -- Text Split<br/>Chunks --> N(Vector DB)
+N -- Related<br/>Company Info --> K
+A --> K
+A -- Retrieval --> N
+K --> L((Llama_code LLM))
+L --> M(Streamlit<br/>Chat Output)
 ```
 
 ## Component Swapping
@@ -77,7 +81,7 @@ All components are designed to be swappable, meaning that it should be easy to r
 This uses the NVIDIA NeMo Retriever model through NVIDIA AI Playground. This is a fine-tuned version of the E5-large-v2 embedding model, and it is commercially viable for use. This maps every user query into a 1024-dim embedding and uses cosine similarity to provide relevant matches. This can be swapped out for various types of retrieval models that can map to different sorts of embeddings, depending on the use case. They can also be fine-tuned further for the specific data being used.
 
 ### Vector DB
-The vector database being used here is Milvus, an AI-native and GPU-accelerated embedding database. It can easily be swapped out for numerous other options like ChromaDB, Pinecone, FAISS and others. Some of the options are listed on the [LangChain docs here](https://python.langchain.com/docs/integrations/vectorstores/).
+The vector database being used here is FAISS. It can easily be swapped out for numerous other options like ChromaDB, Pinecone, Milvus and others. Some of the options are listed on the [LangChain docs here](https://python.langchain.com/docs/integrations/vectorstores/).
 
 ### Prompt Augmentation
 Depending on the backend and model, you may need to modify the way in which you format your prompt and chat conversations to interact with the model. The current design considers each query independently. However, if you put the input as a set of user/assistant/user interactions, you can combine multi-turn conversations. This may also require periodic summarization of past context to ensure the chat does not exceed the context length of the model.
