@@ -1,6 +1,13 @@
 # Multimodal RAG Assistant with NVIDIA NeMo
 Adapted example built on top of and using NVIDIA AI Foundation Models.
 
+Example Use Case: Sample HTML of a desired product page taylored to the user's company
+
+Breif Overview: Developed to input an image of a product section of a website. The user will then
+enter their desired company from their external document. Using this information the AI Assistant
+will output HTML similar to the HTML displayed in the image inputted earlier; this HTML will be
+taylored to the users selected company.
+
 # Implemented Features
 - [RAG in 5 minutes Chatbot Video](https://youtu.be/N_OOfkEWcOk) Setup with NVIDIA AI Playground components
 - Source references with options to download the source document
