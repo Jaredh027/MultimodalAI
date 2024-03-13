@@ -1,14 +1,13 @@
 # Multimodal RAG Assistant with NVIDIA NeMo
-Create a simple example to showcase multimodal RAG. It should be easy to adapt, easy to build on top of and uses NVIDIA AI Foundation Models.  
+Adapted example built on top of and using NVIDIA AI Foundation Models.
 
 # Implemented Features
 - [RAG in 5 minutes Chatbot Video](https://youtu.be/N_OOfkEWcOk) Setup with NVIDIA AI Playground components
 - Source references with options to download the source document
 - Analytics through Streamlit at ```/?analytics=on```
-- Added user feedback and integrated with Google Sheets or other database
-- Add fact-check verification of results through a second LLM API call
-- Multimodal parsing of documents - images, tables, text through multimodal LLM APIs
-- Added simple conversational history with memory and summarization
+- Multimodal parsing of documents - images, text through multimodal LLM APIs
+- Uses fuyu_8b to get image description
+- Uses llama2_code_34b to develope code based off image description
 
 ## Setup Steps
 
@@ -31,20 +30,14 @@ The following describes how you can have this chatbot up-and-running in less tha
    export NVIDIA_API_KEY="provide_your_key"
    ```
 
-4. Follow instructions available [here](https://milvus.io/docs/install_standalone-docker.md#Install-Milvus-standalone-using-Docker-Compose).
-
-5. If you want to use the PowerPoint parsing feature, you will need LibreOffice. On Ubuntu Linux systems, use the command ```sudo apt install libreoffice``` to install it.
-
-6. Note that if you would like to use the "Feedback" feature, you will need a service account for Google Sheets. Save the service account credentials file as service.json in the multimodal_assistant folder.
-
-7. Go to the folder with this code and then run the example using streamlit
+4. Go to the folder with this code and then run the example using streamlit
 ```
-cd GenerativeAIExamples/experimental/multimodal_assistant && streamlit run Multimodal_Assistant.py
+cd GenerativeAIExamples/experimental/multimodal_assistant && streamlit run Picture_to_Code_Assistant.py
 ```
 
-8. Finally to test the deployed example, goto the URL `http://<host_ip>:8501` in a web browser. Click on `browse files` and select your knowledge source. After selecting click on `Upload!` button to complete the ingestion process.
+5. Finally to test the deployed example, goto the URL `http://<host_ip>:8501` in a web browser. Click on `browse files` and select your knowledge source. After selecting click on `Upload!` button to complete the ingestion process.
 
-9. You are all set now! Try out queries pertinent to the knowledge base using text from the UI.
+6. You are all set now! Try out queries pertinent to the knowledge base using text from the UI.
 
 The resulting server will launch on a specified port, like localhost:8501. If your machine has ports being forwarded on the public IP, it can be accessed by other people who can use `<IP_ADDR>:<PORT>` to access the chatbot.
 
@@ -57,10 +50,6 @@ TO ssh with port forwarding:
 ```
 ssh -L PORT:IP_ADDR:PORT localhost
 ```
-
-## Known Limitations
-
-Once you add documents and re-create the vector database, it will show that it has successfully completed and you can now use it to answer questions. Since the chatbot needs to connect to the newly created connection, you may have to refresh the page, or else you will see a Milvus connection error. Once you refresh it should be able to connect to the collection.
 
 ## Architecture Diagram
 
