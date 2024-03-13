@@ -233,8 +233,6 @@ if prompt and st.session_state.image_query:
         
     st.session_state.messages.append({"role": "assistant", "content": full_response})
 elif prompt and not st.session_state.image_query:
-    print("NONONOONO")
     with st.chat_message("error"):
         st.markdown("You must upload and image first.")
-    #st.session_state.messages.append({"role": "assistant", "content": "You must upload and image first."})
 
