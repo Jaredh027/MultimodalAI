@@ -2,13 +2,13 @@
 Adapted example built on top of and using NVIDIA AI Foundation Models.
 
 ### Example Use Case
-Getting sample HTML of a desired product page taylored to the user's company and its respected products.
+Getting sample HTML of a desired product page tailored to the user's company and its respected products.
 
 ### Brief Overview
 Developed to input an image of a product section of a website. The user will then
 enter their desired company from their external document. Using this information the AI Assistant
 will output HTML similar to the HTML displayed in the image inputted earlier; this HTML will be
-taylored to the users selected company.
+tailored to the user's selected company.
 
 # Implemented Features
 - [RAG in 5 minutes Chatbot Video](https://youtu.be/N_OOfkEWcOk) Setup with NVIDIA AI Playground components
@@ -16,8 +16,8 @@ taylored to the users selected company.
 - Analytics through Streamlit at ```/?analytics=on```
 - Multimodal parsing of documents - images, text through multimodal LLM APIs
 - Uses fuyu_8b to get image description
-- Uses llama2_code_34b to develope code based off image description
-- External document containing sample company product information in output.txt file
+- Uses llama2_code_34b to develop code based on image description
+- External document containing sample company product information in the output.txt file
 
 ## Setup Steps
 
