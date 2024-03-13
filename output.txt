@@ -1,0 +1,95 @@
+Company 1: DataSynth
+
+    DataSynth Developer Pro
+
+        Price: Free
+        Data Limit: 5GB
+        Features: Personal development license, real-time SQL query execution, basic geospatial functions, community support.
+
+    DataSynth Cloud Essentials
+
+        Price: Free
+        Data Limit: 10GB
+        Features: Dashboarding tool, time series analysis, Kafka integration for real-time data streaming, basic support.
+
+    DataSynth Cloud Premium
+
+        Price: $0.15/hour
+        Data Limit: 150GB
+        Features: Multi-user environment, advanced geospatial analytics, GPU acceleration, premium support options.
+
+    DataSynth Managed Service on AWS
+
+        Price: $450/month or $4900/annual
+        Data Limit: 400GB
+        Features: Full HA replication, external authentication (LDAP, Active Directory), multi-node clusters, advanced analytics workbench.
+
+    DataSynth Enterprise Platform
+
+        Price: $18,000/annual license
+        Data Limit: Unlimited
+        Features: Enterprise-grade support, advanced machine learning capabilities, custom UDFs, complete time and space analytics suite.
+
+Company 2: StreamPeak
+
+    StreamPeak Developer Hub
+
+        Price: Free
+        Data Limit: 3GB
+        Features: Access to basic time and space analytics, SQL workbench, graph analytics, and community forums.
+
+    StreamPeak Cloud Starter
+
+        Price: Free
+        Data Limit: 12GB
+        Features: Real-time analysis, Kafka stream processing, basic dashboarding tools, email support.
+
+    StreamPeak Cloud Enterprise
+
+        Price: $0.20/hour
+        Data Limit: 100GB
+        Features: Advanced ML model integration, user-defined functions, multi-user support, real-time materialized views.
+
+    StreamPeak Managed on Google Cloud
+
+        Price: $550/month or $6000/annual
+        Data Limit: 1TB
+        Features: GPU acceleration, full HA replication, multi-node setup, LDAP/Active Directory integration.
+
+    StreamPeak Ultimate Data Suite
+
+        Price: $22,000/annual license
+        Data Limit: Unlimited
+        Features: Premium support with dedicated account manager, complete suite of analytics tools, customized solution design.
+
+Company 3: QuantumAnalytics
+
+    QuantumAnalytics DevStart
+
+        Price: Free
+        Data Limit: 8GB
+        Features: Developer edition with interactive SQL notebooks, basic real-time analytics, and community support.
+
+    QuantumAnalytics Free Tier
+
+        Price: Free
+        Data Limit: 16GB
+        Features: Dashboarding capabilities, Kafka integration, time series analysis, basic support.
+
+    QuantumAnalytics Dedicated Cloud
+
+        Price: $0.25/hour
+        Data Limit: 200GB
+        Features: Advanced geospatial functions, ML model hosting, UDFs, multi-user access.
+
+    QuantumAnalytics Managed Service on Azure
+
+        Price: $600/month or $6500/annual
+        Data Limit: 500GB
+        Features: Multi-node clusters, external authentication options, dedicated support, advanced data analytics toolkit.
+
+    QuantumAnalytics Enterprise Edge
+
+        Price: $25,000/annual license
+        Data Limit: Unlimited
+        Features: Full suite of analytics and ML tools, enterprise support level, GPU options, and high availability solutions.
