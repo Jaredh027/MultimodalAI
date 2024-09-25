@@ -18,3 +18,21 @@ your specific products.
 - Uses fuyu_8b to get image description
 - Uses llama2_code_34b to develop code based on image description
 - External document containing sample company product information in the output.txt file
+
+## Architecture Diagram
+
+Here is how the system is designed:
+
+```mermaid
+graph LR
+E(User Query) --> A(FRONTEND<br/>Chat UI<br/>Streamlit)
+J(Prompt: Describe HTML page) --> G((Fuyu LLM))
+F(Image File of <br/>Sample Product Webpage) --> G
+G -- Descritpion of Webpage<br/>with Products --> K(Augmented Prompt)
+H(Company Product<br/>Descriptions in output.txt) -- Text Split<br/>Chunks --> N(Vector DB)
+N -- Related<br/>Company Info --> K
+A --> K
+A -- Retrieval --> N
+K --> L((Llama_code LLM))
+L --> M(Streamlit<br/>Chat Output)
+```
